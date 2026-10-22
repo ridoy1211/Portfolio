@@ -53,6 +53,12 @@ footer a{color:var(--yellow)}
 @media(max-width:560px){.certs li{flex-direction:column;gap:0}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 .hero:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to top,rgba(14,34,56,.95) 0%,rgba(14,34,56,.7) 40%,rgba(14,34,56,0) 80%)}  
+.sub{margin:2rem 0 .8rem;font-size:1.3rem}
+.cos{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.co{display:block;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-top:5px solid var(--g);padding:1.2rem 1.3rem;transition:transform .15s,box-shadow .15s}
+.co:hover,.co:focus-visible{transform:translateY(-3px);box-shadow:0 10px 22px rgba(14,34,56,.14)}
+.co time{font-size:.9rem;color:var(--mute)}.co b{display:block;font-family:Fraunces,serif;font-size:1.5rem}
+.co p{margin:.4rem 0 .8rem}.co span{color:var(--g);font-weight:600}
 </style>
 </head>
 <body>
@@ -86,7 +92,12 @@ footer a{color:var(--yellow)}
 <li><time>Jul 2026 to present, remote</time><h3>Machine Learning Intern, FlyRank AI</h3><p>Built and compared rule-based baselines and tree-based models, applied embeddings and clustering to unstructured data, and solved intent-classification and opportunity-scoring problems. Shipped a capstone with ranked, human-reviewed recommendations.</p></li>
 <li><time>Jan to Dec 2025, remote</time><h3>Domain Leader, Business, Aspire Institute</h3><p>Led speaker sessions and networking events, and connected mentors with participants.</p></li>
 </ol>
-<!-- FIX 3 companies block goes here -->
+<h3 class="sub">Companies I founded, in order</h3>
+<div class="cos">
+<a class="co" href="https://www.facebook.com/p/Tenesign-61550885944814/" target="_blank" rel="noopener"><time>Oct 2024 to present, Comilla</time><b>Tenesign</b><p>Founder. Runs operations, product development, partnerships, and marketing.</p><span>Visit Tenesign on Facebook</span></a>
+<a class="co" href="https://www.linkedin.com/company/webentiondigi" target="_blank" rel="noopener"><time>Nov 2024 to present, remote</time><b>Webention</b><p>Founder and CTO. A digital agency for websites, branding, and marketing, working with clients worldwide.</p><span>Visit Webention on LinkedIn</span></a>
+</div>
+  
 </section>
 
 <section id="education"><h2>Education</h2>
