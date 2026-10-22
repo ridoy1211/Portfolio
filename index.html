@@ -59,6 +59,16 @@ footer a{color:var(--yellow)}
 .co:hover,.co:focus-visible{transform:translateY(-3px);box-shadow:0 10px 22px rgba(14,34,56,.14)}
 .co time{font-size:.9rem;color:var(--mute)}.co b{display:block;font-family:Fraunces,serif;font-size:1.5rem}
 .co p{margin:.4rem 0 .8rem}.co span{color:var(--g);font-weight:600}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+.tabs button{font:inherit;padding:.45rem .95rem;border:1px solid var(--line);background:#fff;border-radius:999px;cursor:pointer}
+.tabs button.on{background:var(--g);border-color:var(--g);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;padding:0;margin:0;list-style:none}
+.chips li{padding:.4rem .85rem;background:#fff;border:1px solid var(--line);border-radius:6px;transition:transform .15s,border-color .15s}
+.chips li:hover{transform:translateY(-2px);border-color:var(--g)}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.8rem}
+.links a{display:block;padding:1rem 1.1rem;background:#fff;border:1px solid var(--line);border-left:4px solid var(--g);text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.links a:hover,.links a:focus-visible{transform:translateY(-3px);box-shadow:0 10px 22px rgba(14,34,56,.12)}
+.links b{display:block;font-family:Fraunces,serif;font-size:1.15rem}.links span{color:var(--mute);font-size:.9rem}
 </style>
 </head>
 <body>
@@ -124,11 +134,27 @@ footer a{color:var(--yellow)}
 <li>Build Your Own Chatbot, IBM Cognitive Class<span>Jun 2024</span></li>
 <li>Prompt Engineering for Everyone, Cognitive Class<span>May 2024</span></li>
 </ul>
-<h3 style="margin:2rem 0 .4rem">Tools</h3>
-<p class="skills">Python, pandas, NumPy, scikit-learn, PyTorch, SQL, DuckDB, LangChain, Git, R, Stata, and an unreasonable fondness for confidence intervals.</p></section>
+</section>
+  
+<section id="skills"><h2>Skills and tools</h2>
+<div class="tabs"><button type="button" class="on" data-f="all">All</button><button type="button" data-f="ml">Machine learning</button><button type="button" data-f="data">Data</button><button type="button" data-f="web">Web</button><button type="button" data-f="lead">Leadership</button></div>
+<ul class="chips">
+<li data-c="ml">Python</li><li data-c="ml">scikit-learn</li><li data-c="ml">PyTorch</li><li data-c="ml">Embeddings and clustering</li><li data-c="ml">LangChain</li>
+<li data-c="data">pandas</li><li data-c="data">NumPy</li><li data-c="data">SQL</li><li data-c="data">DuckDB</li><li data-c="data">R</li><li data-c="data">Stata</li>
+<li data-c="web">HTML</li><li data-c="web">CSS</li><li data-c="web">JavaScript</li><li data-c="web">Git</li>
+<li data-c="lead">Team management</li><li data-c="lead">Project management</li><li data-c="lead">Public speaking</li><li data-c="lead">Marketing strategy</li>
+</ul></section>  
+<section id="connect"><h2>Get connected</h2>
+<div class="links">
+<a href="https://www.linkedin.com/in/ridoy-hasan7/" target="_blank" rel="noopener"><b>LinkedIn</b><span>Experience and messages</span></a>
+<a href="https://github.com/ridoy1211" target="_blank" rel="noopener"><b>GitHub</b><span>Code and reproducible projects</span></a>
+<a href="https://dev.to/ridoy_hasan" target="_blank" rel="noopener"><b>dev.to</b><span>Developer posts</span></a>
+<a href="https://medium.com/@hridoydez" target="_blank" rel="noopener"><b>Medium</b><span>Articles</span></a>
+<a href="https://www.youtube.com/@ridoywithridoy" target="_blank" rel="noopener"><b>YouTube</b><span>@ridoywithridoy</span></a>
+<a href="https://x.com/Hridoy_Hasan_43" target="_blank" rel="noopener"><b>X</b><span>@Hridoy_Hasan_43</span></a>
+<a href="https://www.facebook.com/hridoyhasann11" target="_blank" rel="noopener"><b>Facebook</b><span>Personal updates</span></a>
+</div></section>
 
-<section id="elsewhere"><h2>Elsewhere</h2>
-<p><a href="https://www.linkedin.com/in/ridoy-hasan7/">LinkedIn</a>, <a href="https://github.com/ridoy1211">GitHub</a>, <a href="https://dev.to/ridoy_hasan">dev.to</a>, <a href="https://medium.com/@hridoydez">Medium</a>, <a href="https://www.youtube.com/@ridoywithridoy">YouTube</a>, <a href="https://x.com/Hridoy_Hasan_43">X</a>, and <a href="https://www.facebook.com/hridoyhasann11">Facebook</a>.</p></section>
 
 <section id="contact"><h2>Contact</h2>
 <p>For supervision, scholarship, or collaboration enquiries, write to <a href="mailto:hridoydez@gmail.com">hridoydez@gmail.com</a>.</p></section>
@@ -158,6 +184,7 @@ G.attributes.position.needsUpdate=true;pts.rotation.y=mx*.5;C.position.set(0,6+m
 if(!calm)requestAnimationFrame(tick)}
 requestAnimationFrame(tick)}
 console.log('Found the console. Reviewers like you are my favourite kind.');
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.chips li').forEach(li=>li.hidden=b.dataset.f!=='all'&&li.dataset.c!==b.dataset.f)});  
 </script>
 </body>
 </html>
