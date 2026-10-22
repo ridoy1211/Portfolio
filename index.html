@@ -75,6 +75,8 @@ footer a{color:var(--yellow)}
 .btn2{font:inherit;font-weight:600;padding:.6rem 1.1rem;border:2px solid var(--board);color:var(--board);background:transparent;text-decoration:none;border-radius:3px;cursor:pointer}
 .btn2.p2{background:var(--board);color:var(--chalk)}.btn2:hover{transform:translateY(-2px)}
 .small{font-size:.9rem;color:var(--mute);margin:.6rem 0 0;min-height:1.4rem}
+.top{position:fixed;right:1.2rem;bottom:1.2rem;width:3rem;height:3rem;border:0;border-radius:50%;background:var(--board);color:var(--yellow);font-size:1.3rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:5}
+.top.on{opacity:1;pointer-events:auto}
 </style>
 </head>
 <body>
@@ -172,6 +174,7 @@ footer a{color:var(--yellow)}
 </div></div></section>
 </main>
 <footer><p>Built with Three.js and a baseline that scored zero. &copy; 2026 Ridoy Hasan. <a href="https://ridoy1211.github.io/Flyrank-Internship-ML/">Paper</a> and <a href="https://github.com/ridoy1211/Portfolio">source</a>.</p></footer>
+<button class="top" id="top" type="button" aria-label="Back to top">&uarr;</button>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const Q=[["The first principle is that you must not fool yourself, and you are the easiest person to fool.","Richard Feynman, Cargo Cult Science, 1974"],["All models are wrong, but some are useful.","George E. P. Box"],["What I cannot create, I do not understand.","Richard Feynman, left on his blackboard"],["My hand-written baseline scored 0.00 precision@50. It remains my most consistent model.","Me, Week 4"]];
@@ -198,6 +201,7 @@ requestAnimationFrame(tick)}
 console.log('Found the console. Reviewers like you are my favourite kind.');
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.chips li').forEach(li=>li.hidden=b.dataset.f!=='all'&&li.dataset.c!==b.dataset.f)});  
 document.getElementById('cp').onclick=()=>{const m=document.getElementById('cpm');navigator.clipboard.writeText('hridoydez@gmail.com').then(()=>{m.textContent='Email copied.'},()=>{m.textContent='Copy failed. Write to hridoydez@gmail.com.'})};
+const tb=document.getElementById('top');addEventListener('scroll',()=>tb.classList.toggle('on',scrollY>600));tb.onclick=()=>scrollTo({top:0,behavior:'smooth'});
 </script>
 </body>
 </html>
