@@ -69,6 +69,12 @@ footer a{color:var(--yellow)}
 .links a{display:block;padding:1rem 1.1rem;background:#fff;border:1px solid var(--line);border-left:4px solid var(--g);text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
 .links a:hover,.links a:focus-visible{transform:translateY(-3px);box-shadow:0 10px 22px rgba(14,34,56,.12)}
 .links b{display:block;font-family:Fraunces,serif;font-size:1.15rem}.links span{color:var(--mute);font-size:.9rem}
+.ct{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-top:6px solid var(--board);padding:1.6rem}
+.me{border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--line)}
+.ct>div{flex:1;min-width:16rem}.cta{display:flex;flex-wrap:wrap;gap:.7rem;margin:1rem 0 0}
+.btn2{font:inherit;font-weight:600;padding:.6rem 1.1rem;border:2px solid var(--board);color:var(--board);background:transparent;text-decoration:none;border-radius:3px;cursor:pointer}
+.btn2.p2{background:var(--board);color:var(--chalk)}.btn2:hover{transform:translateY(-2px)}
+.small{font-size:.9rem;color:var(--mute);margin:.6rem 0 0;min-height:1.4rem}
 </style>
 </head>
 <body>
@@ -157,7 +163,13 @@ footer a{color:var(--yellow)}
 
 
 <section id="contact"><h2>Contact</h2>
-<p>For supervision, scholarship, or collaboration enquiries, write to <a href="mailto:hridoydez@gmail.com">hridoydez@gmail.com</a>.</p></section>
+<div class="ct">
+<img class="me" src="ridoy.jpg" alt="Portrait of Ridoy Hasan" width="160" height="160" loading="lazy">
+<div>
+<p>Professors, scholarship committees, and collaborators: I would be glad to hear from you. Based in Comilla, Bangladesh (UTC+6).</p>
+<p class="cta"><a class="btn2 p2" href="mailto:hridoydez@gmail.com?subject=Enquiry%20from%20your%20portfolio">Email me</a><button type="button" class="btn2" id="cp">Copy email</button><a class="btn2" href="https://www.linkedin.com/in/ridoy-hasan7/" target="_blank" rel="noopener">Message on LinkedIn</a><a class="btn2" href="cv.pdf">Download CV</a></p>
+<p class="small" id="cpm" role="status"></p>
+</div></div></section>
 </main>
 <footer><p>Built with Three.js and a baseline that scored zero. &copy; 2026 Ridoy Hasan. <a href="https://ridoy1211.github.io/Flyrank-Internship-ML/">Paper</a> and <a href="https://github.com/ridoy1211/Portfolio">source</a>.</p></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -185,6 +197,7 @@ if(!calm)requestAnimationFrame(tick)}
 requestAnimationFrame(tick)}
 console.log('Found the console. Reviewers like you are my favourite kind.');
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.chips li').forEach(li=>li.hidden=b.dataset.f!=='all'&&li.dataset.c!==b.dataset.f)});  
+document.getElementById('cp').onclick=()=>{const m=document.getElementById('cpm');navigator.clipboard.writeText('hridoydez@gmail.com').then(()=>{m.textContent='Email copied.'},()=>{m.textContent='Copy failed. Write to hridoydez@gmail.com.'})};
 </script>
 </body>
 </html>
