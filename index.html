@@ -127,7 +127,7 @@ const hero=document.querySelector('.hero'),cv=document.getElementById('bg'),R=ne
 const N=88,P=new Float32Array(N*N*3);
 for(let i=0;i<N;i++)for(let j=0;j<N;j++){const k=(i*N+j)*3;P[k]=(i-N/2)*.3;P[k+2]=(j-N/2)*.3}
 const G=new THREE.BufferGeometry();G.setAttribute('position',new THREE.BufferAttribute(P,3));
-const pts=new THREE.Points(G,new THREE.PointsMaterial({size:.055,color:0xf1f0e6,transparent:true,opacity:.8}));S.add(pts);
+const pts=new THREE.Points(G,new THREE.PointsMaterial({size:.055,color:0x7fa6d6,transparent:true,opacity:.55}));S.add(pts);
 let mx=0,my=0;hero.addEventListener('mousemove',e=>{const b=hero.getBoundingClientRect();mx=(e.clientX-b.left)/b.width-.5;my=(e.clientY-b.top)/b.height-.5});
 function fit(){const w=hero.clientWidth,h=hero.clientHeight;R.setPixelRatio(Math.min(devicePixelRatio,2));R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix()}
 addEventListener('resize',fit);fit();
